@@ -1,0 +1,25 @@
+////////////////////////////////////
+//
+//* TYPOGRAPHY ADJUSTMENT STYLES *
+//
+///////////////////////////////////
+
+.text-center{
+  text-align: center;
+}
+
+
+
+////////////////////////////////////
+//
+//* MARGIN STYLES *
+//
+///////////////////////////////////
+
+.mb-20{
+  margin-bottom: calculateRem(20px);
+}
+
+.mb-30 {
+  margin-bottom: calculateRem(30px);
+}

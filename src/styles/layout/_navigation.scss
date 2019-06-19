@@ -1,0 +1,28 @@
+@import "../abstracts/mixins";
+/*
+  NAVIGATION STYLES
+*/
+
+.navigation {
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: calculateRem(30px) calculateRem(90px) 0;
+  top: calculateRem(90px);
+
+
+  @include element("logo") {
+    width: 8%;
+    margin-left: calculateRem(-20px);
+  }
+
+  @include element("list") {
+    .navigation__link {
+      text-align: right;
+      // margin-bottom: 10px;
+    }
+  }
+}

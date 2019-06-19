@@ -1,0 +1,107 @@
+@import '../abstracts/variables';
+@import '../abstracts/functions';
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i');
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400');
+
+
+/* FONT(S) */
+
+$font-family--poppins: 'Poppins', sans-serif;
+
+// .font--poppins {
+//   font-family: $font-family--poppins !important;
+// }
+
+/* TYPOGRAPHY STYLES */
+
+////////////////////////////////////
+//
+//* HEADING STYLES *
+//
+///////////////////////////////////
+
+h1,
+h2,
+h3 {
+  line-height: 1.3;
+}
+
+.heading {
+  font-weight: 700;
+  color: $color--white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: left;
+
+  @include modifier('large') {
+    font-size: calculateRem(183px);
+    line-height: .9;
+  }
+
+  @include modifier('medium'){
+    font-size: calculateRem(89px);
+  }
+}
+
+////////////////////////////////////
+//
+//* PARAGRAPH STYLES *
+//
+///////////////////////////////////
+
+.paragraph{
+  font-size: 1.5rem;
+}
+
+////////////////////////////////////
+//
+//* AHREF/LINK STYLES *
+//
+///////////////////////////////////
+.anchor-text, .cta {
+  position: relative;
+  color: $color--white; 
+  font-size: calculateRem(18px);
+  font-weight: 400;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.anchor-text{
+  &:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 1.5px;
+    background-color: $color--red;
+    transition: width 0.25s ease-out;
+    -webkit-transition: width 0.25s ease-out;
+    -moz-transition: width 0.25s ease-out;
+    -ms-transition: width 0.25s ease-out;
+    -o-transition: width 0.25s ease-out;
+}
+  &:hover:after {
+    width: 100%;
+    right: auto;
+    left: 0;
+  }
+}
+
+.cta{
+  font-weight: 500;
+}
+
+
+
+////////////////////////////////////
+//
+//* FONT MODIFIER STYLES *
+//
+///////////////////////////////////
+
+
+//FONT COLOR MODIFIERS:
+
+// SPECIFIC LETTER/WORD/SENTENCE STYLES

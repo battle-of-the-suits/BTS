@@ -1,0 +1,41 @@
+@import "../abstracts/variables";
+
+.cta{
+    padding: calculateRem(25px) calculateRem(35px);
+    background-color: $color--red;
+    position: absolute;
+    left: 50%;
+    bottom: 20%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transition: background-color 0.3s ease-out;
+    -webkit-transition: background-color 0.3s ease-out;
+    -moz-transition: background-color 0.3s ease-out;
+    -ms-transition: background-color 0.3s ease-out;
+    -o-transition: background-color 0.3s ease-out;
+
+     &:hover {
+         background-color: $color--dark-red;
+     }
+     
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
