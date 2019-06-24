@@ -3,36 +3,39 @@ import TweenLite from "gsap";
 class Loading{
     constructor(){
         this.smokeVideo = document.querySelector("#js-loading-video");
-        // this.smokeVideo.addEventListener("ended", function(){
-        //     alert('hi');
-        // });
-        this.AnimationEffects(this.smokeVideo);
+        // this.smokeVideo.addEventListener("ended", () => this.removeLoadingSection());
+        
+        this.AnimationEffects();
             
     }
 
-    textAnimation(video){
+    textAnimation(){
         let textContent = document.querySelector("#js-loading-text-content");
+        let that = this; 
         TweenLite.to(textContent, 0.7, {
             opacity: 0,
             delay: 2.5,
-            onComplete: () => this.playVideo(video)
+            onComplete: function(){
+                console.log(that)
+                that.playVideo()
+            }
         });
     }
 
-    AnimationEffects(video){
-        this.textAnimation(video);
+    AnimationEffects(){
+        this.textAnimation();
     }
 
-    playVideo(video){
+    playVideo(){
         
-        video.play();
-        video.playbackRate = 1.5;
+        this.smokeVideo.play();
+        this.smokeVideo.playbackRate = 1.5;
+
     }
 
     removeLoadingSection(){
-        TweenLite.set(document.querySelector("#js-loading-video"), {display: "none"});
+        TweenLite.set(document.querySelector("#js-loading"), {display: "none"});
     }
-
 
 }
 

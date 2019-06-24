@@ -670,6 +670,7 @@ img {
   width: 100%;
   background-color: black;
   opacity: 0.17;
+  z-index: 0;
 }
 .hero__bg-img img {
   height: 100%;
