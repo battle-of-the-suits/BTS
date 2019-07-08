@@ -1,42 +1,42 @@
-import TweenLite from "gsap";
+import TweenLite, { Power0, Power4, TimelineLite, TimelineMax } from "gsap";
 
 class Loading{
     constructor(){
-        this.smokeVideo = document.querySelector("#js-loading-video");
-        // this.smokeVideo.addEventListener("ended", () => this.removeLoadingSection());
-        
-        this.AnimationEffects();
+    }
+
+    loadingSectionAnimations(){
+         let elLoadingHeading = document.querySelector("#js-loading-heading"),
+            elLoadingSection = document.querySelector("#js-loading-section"),
+            elAnimateUp = document.querySelectorAll(".animate-up"),
+            elAnimateDown = document.querySelectorAll(".animate-down"),
+            loadingTl = new TimelineLite();
+
+        loadingTl
+            .to(elLoadingHeading, 1.2, { delay: 0.2, opacity: 1, ease: Power4.easeIn })
+            .addLabel("text-gone", '+=1.3')
+            .to(elAnimateUp, 0.55, {opacity: 0, y: -120, skewY: 60, ease: Power4.easeIn}, "text-gone")
+            .to(elAnimateDown, 0.55, {opacity: 0, y: 120, skewY: 60, ease: Power4.easeIn}, "text-gone")
+            .set(elLoadingSection, {autoAlpha: 0});
+
+            return loadingTl;
+    }
+
+    landingSectionAnimations(){
+        let elNavigation = document.querySelector("#js-navigation"),
+            landingTl = new TimelineLite();
+
+        landingTl
+            .to(elNavigation, 0.7, {opacity: 1, autoAlpha: 1, ease: Power4.easeIn});
             
+        return landingTl;    
     }
 
-    textAnimation(){
-        let textContent = document.querySelector("#js-loading-text-content");
-        let that = this; 
-        TweenLite.to(textContent, 0.7, {
-            opacity: 0,
-            delay: 2.5,
-            onComplete: function(){
-                console.log(that)
-                that.playVideo()
-            }
-        });
+    animationEffects(){
+       let masterTimeline = new TimelineMax();
+       masterTimeline
+            .add(this.loadingSectionAnimations)
+            .add(this.landingSectionAnimations, '+=2.9')
     }
-
-    AnimationEffects(){
-        this.textAnimation();
-    }
-
-    playVideo(){
-        
-        this.smokeVideo.play();
-        this.smokeVideo.playbackRate = 1.5;
-
-    }
-
-    removeLoadingSection(){
-        TweenLite.set(document.querySelector("#js-loading"), {display: "none"});
-    }
-
 }
 
 export default Loading;

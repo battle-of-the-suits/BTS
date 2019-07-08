@@ -8,6 +8,7 @@
     overflow: hidden;
 
     @include element("text-content"){
+        width: 100%;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -16,27 +17,9 @@
         -moz-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
         -o-transform: translate(-50%, -50%);
-    }
 
-    @include element("video-container") {
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        overflow: hidden;
-        z-index: -1;
-
-        .loading__video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            min-width: 100%;
-            min-height: 100%;
+        .loading__heading{
+            opacity: 0;
         }
     }
-
-
-
-
 }

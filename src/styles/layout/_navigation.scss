@@ -4,25 +4,24 @@
 */
 
 .navigation {
+  opacity: 0;
+  visibility: hidden;
   width: 100%;
   position: fixed;
   z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: calculateRem(30px) calculateRem(90px) 0;
-  top: calculateRem(90px);
-
-
-  @include element("logo") {
-    width: 8%;
-    margin-left: calculateRem(-20px);
-  }
+  padding: calculateRem(60px) calculateRem(90px) 0;
+  // top: calculateRem(90px);
 
   @include element("list") {
+      display: flex;
+      justify-content: space-between;
     .navigation__link {
-      text-align: right;
+      // text-align: right;
       // margin-bottom: 10px;
     }
+  }
+
+  .navigation__logo{
+    display: block;
   }
 }

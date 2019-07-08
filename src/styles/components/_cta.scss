@@ -2,7 +2,7 @@
 
 .cta{
     padding: calculateRem(25px) calculateRem(35px);
-    background-color: $color--red;
+    // background-color: $color--red;
     position: absolute;
     left: 50%;
     bottom: 20%;
@@ -18,7 +18,7 @@
     -o-transition: background-color 0.3s ease-out;
 
      &:hover {
-         background-color: $color--dark-red;
+        //  background-color: $color--dark-red;
      }
      
 }
